@@ -4,7 +4,7 @@
   "description": "test some popular modules",
   "main": "index.js",
   "scripts": {
-    "start": "standard && node index.js",
+    "start": "rimraf workspace && standard && node index.js",
     "test": "npm run start"
   },
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
