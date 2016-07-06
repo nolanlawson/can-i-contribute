@@ -98,13 +98,5 @@
   "run-sequence",
   "gulp-watch",
   "dotenv",
-  "supertest",
-  "gulp-notify",
-  "stylus",
-  "phantomjs",
-  "jsdom",
-  "bootstrap",
-  "co",
-  "cookie-parser",
-  "config"
+  "supertest"
 ]
