@@ -6,9 +6,12 @@ var fetch = require('node-fetch')
 var packages = require('./topPackages')
 var path = require('path')
 var url = require('url')
+var present = require('present')
+var writeFile = denodeify(require('fs').writeFile)
 
 function spawnAndRedirectConsole (cmd, args, opts) {
   console.log(cmd, args, {cwd: opts.cwd})
+  var start = present()
   return new Promise((resolve, reject) => {
     var child = spawn(cmd, args, opts)
 
@@ -16,7 +19,7 @@ function spawnAndRedirectConsole (cmd, args, opts) {
       if (code === 0) {
         resolve()
       } else {
-        reject(code)
+        reject(new Error('rejected with code: ' + code))
       }
     })
 
@@ -27,8 +30,15 @@ function spawnAndRedirectConsole (cmd, args, opts) {
 
     child.stdout.on('data', data => console.log(data.toString('utf-8').replace(/\n$/, '')))
     child.stderr.on('data', data => console.error(data.toString('utf-8').replace(/\n$/, '')))
+  }).then(() => {
+    return {passed: true, time: present() - start}
+  }).catch(err => {
+    console.error(err)
+    return {passed: false, time: present() - start}
   })
 }
+
+var testResults = []
 
 rimraf('./workspace').then(() => {
   return mkdirp('./workspace')
@@ -53,20 +63,30 @@ rimraf('./workspace').then(() => {
         return gitPromise.then(() => {
           var paths = url.parse(repo).path.split('/')
           var dir = paths[paths.length - 1].replace(/.git$/, '')
+          var pkgResult = {name: pkg, repo: repo}
           return spawnAndRedirectConsole('npm', ['install'], {
             cwd: path.join('workspace', dir),
             env: process.env
-          }).then(() => {
+          }).then(res => {
+            pkgResult.npmInstallPassed = res.passed
+            pkgResult.npmInstallTime = res.time
             return spawnAndRedirectConsole('npm', ['test'], {
               cwd: path.join('workspace', dir),
               env: process.env
             })
+          }).then(res => {
+            pkgResult.npmTestPassed = res.passed
+            pkgResult.npmTestTime = res.time
+            testResults.push(pkgResult)
+            console.log(JSON.stringify(testResults, null, '  '))
           })
         })
       })
     })
   })
-  return chain
+  return chain.then(() => {
+    return writeFile('results.json', JSON.stringify(testResults, null, '  '), 'utf-8')
+  })
 }).catch(err => {
   console.error(err)
   console.error(err.stack)
