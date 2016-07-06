@@ -1,0 +1,19 @@
+{
+  "name": "can-i-contribute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child-process-promise": "^2.0.3",
+    "denodeify": "^1.2.1",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^1.5.3",
+    "rimraf": "^2.5.3"
+  }
+}
