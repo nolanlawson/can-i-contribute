@@ -1,4 +1,4 @@
-var spawn = require('child-process-promise').spawn
+var spawn = require('cross-spawn')
 var denodeify = require('denodeify')
 var rimraf = denodeify(require('rimraf'))
 var mkdirp = denodeify(require('mkdirp'))
@@ -9,10 +9,25 @@ var url = require('url')
 
 function spawnAndRedirectConsole (cmd, args, opts) {
   console.log(cmd, args, {cwd: opts.cwd})
-  var promise = spawn(cmd, args, opts)
-  promise.childProcess.stdout.on('data', data => console.log(data.toString('utf-8').replace(/\n$/, '')))
-  promise.childProcess.stderr.on('data', data => console.error(data.toString('utf-8').replace(/\n$/, '')))
-  return promise
+  return new Promise((resolve, reject) => {
+    var child = spawn(cmd, args, opts)
+
+    child.on('close', code => {
+      if (code === 0) {
+        resolve()
+      } else {
+        reject(code)
+      }
+    })
+
+    child.on('error', err => {
+      console.error(err)
+      console.error(err.stack)
+    })
+
+    child.stdout.on('data', data => console.log(data.toString('utf-8').replace(/\n$/, '')))
+    child.stderr.on('data', data => console.error(data.toString('utf-8').replace(/\n$/, '')))
+  })
 }
 
 rimraf('./workspace').then(() => {
