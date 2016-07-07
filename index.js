@@ -19,7 +19,8 @@ var IGNORE = [
   'gulp-sourcemaps', // slow
   'karma',           // slow
   'redis',           // requires redis?
-  'mysql'            // requires mysql?
+  'mysql',           // requires mysql?
+  'forever'          // ties up resources and doesn't delete them
 ]
 
 function spawnAndRedirectConsole (cmd, args, opts) {
