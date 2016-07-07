@@ -101,9 +101,10 @@ rimraf('./workspace').then(() => {
         return gitPromise.then(() => {
           var paths = url.parse(repo).path.split('/')
           var dir = paths[paths.length - 1].replace(/.git$/, '')
+          dir = path.join('workspace', dir)
           var pkgResult = {name: pkg, repo: repo}
           return spawnCommand('npm', ['install'], {
-            cwd: path.join('workspace', dir),
+            cwd: dir,
             env: process.env
           }).then(res => {
             pkgResult.npmInstallPassed = res.passed
