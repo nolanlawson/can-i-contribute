@@ -21,7 +21,8 @@ var IGNORE = [
   'redis',           // requires redis?
   'mysql',           // requires mysql?
   'forever',         // ties up resources and doesn't delete them
-  'mongoose'         // requires mongo
+  'mongoose',        // requires mongo
+  'browser-sync'     // seems to cause EBUSY on windows
 ]
 
 var logger = new (winston.Logger)({
