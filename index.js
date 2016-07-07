@@ -12,8 +12,14 @@ var writeFile = denodeify(require('fs').writeFile)
 var TIMEOUT = 300000 // timeout and fail after this many milliseconds
 
 var IGNORE = [
-  'npm',
-  'pm2'
+  'npm',             // slow
+  'pm2',             // fails
+  'webpack',         // slow
+  'yo',              // slow
+  'gulp-sourcemaps', // slow
+  'karma',           // slow
+  'redis',           // requires redis?
+  'mysql'            // requires mysql?
 ]
 
 function spawnAndRedirectConsole (cmd, args, opts) {
