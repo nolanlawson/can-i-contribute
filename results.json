@@ -1,0 +1,854 @@
+[
+  {
+    "name": "express",
+    "repo": "https://github.com/expressjs/express",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 21488.605803000013,
+    "npmTestPassed": true,
+    "npmTestTime": 13599.756026999996
+  },
+  {
+    "name": "gulp",
+    "repo": "https://github.com/gulpjs/gulp.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 300058.843984,
+    "npmTestPassed": false,
+    "npmTestTime": 2965.633716000011
+  },
+  {
+    "name": "async",
+    "repo": "https://github.com/caolan/async.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 102738.2699960001,
+    "npmTestPassed": true,
+    "npmTestTime": 32512.74779100006
+  },
+  {
+    "name": "request",
+    "repo": "https://github.com/request/request.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 87049.49416599993,
+    "npmTestPassed": false,
+    "npmTestTime": 69198.198141
+  },
+  {
+    "name": "lodash",
+    "repo": "https://github.com/lodash/lodash.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 106940.17307100003,
+    "npmTestPassed": true,
+    "npmTestTime": 29654.96441399993
+  },
+  {
+    "name": "browserify",
+    "repo": "git+ssh://git@github.com/substack/node-browserify.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 34.142493000021204,
+    "npmTestPassed": false,
+    "npmTestTime": 30.661888999980874
+  },
+  {
+    "name": "pm2",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "grunt",
+    "repo": "https://github.com/gruntjs/grunt.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 48016.96340800007,
+    "npmTestPassed": true,
+    "npmTestTime": 14207.330052000005
+  },
+  {
+    "name": "socket.io",
+    "repo": "git://github.com/Automattic/socket.io.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 48794.674616999924,
+    "npmTestPassed": false,
+    "npmTestTime": 11977.412557999836
+  },
+  {
+    "name": "commander",
+    "repo": "https://github.com/tj/commander.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 3656.429148999974,
+    "npmTestPassed": true,
+    "npmTestTime": 14090.462148999795
+  },
+  {
+    "name": "forever",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "mongoose",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "mocha",
+    "repo": "git://github.com/mochajs/mocha.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 82150.2484540001,
+    "npmTestPassed": false,
+    "npmTestTime": 65483.938467000145
+  },
+  {
+    "name": "moment",
+    "repo": "https://github.com/moment/moment.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 112781.095891,
+    "npmTestPassed": true,
+    "npmTestTime": 60147.21627500001
+  },
+  {
+    "name": "bower",
+    "repo": "https://github.com/bower/bower.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 62506.942053999985,
+    "npmTestPassed": true,
+    "npmTestTime": 65772.33792700013
+  },
+  {
+    "name": "chalk",
+    "repo": "https://github.com/chalk/chalk.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 54032.65947399987,
+    "npmTestPassed": false,
+    "npmTestTime": 8087.169802000048
+  },
+  {
+    "name": "underscore",
+    "repo": "git://github.com/jashkenas/underscore.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 46256.323003000114,
+    "npmTestPassed": true,
+    "npmTestTime": 14024.722025000025
+  },
+  {
+    "name": "gulp-uglify",
+    "repo": "https://github.com/terinjokes/gulp-uglify.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 45409.12814000016,
+    "npmTestPassed": true,
+    "npmTestTime": 11174.779877000023
+  },
+  {
+    "name": "cheerio",
+    "repo": "git://github.com/cheeriojs/cheerio.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 26586.857404000126,
+    "npmTestPassed": true,
+    "npmTestTime": 10250.923557000002
+  },
+  {
+    "name": "q",
+    "repo": "git://github.com/kriskowal/q.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 40.031589000020176,
+    "npmTestPassed": false,
+    "npmTestTime": 26.595842000097036
+  },
+  {
+    "name": "debug",
+    "repo": "git://github.com/visionmedia/debug.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 19911.068300999934,
+    "npmTestPassed": true,
+    "npmTestTime": 1029.6430160000455
+  },
+  {
+    "name": "npm",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "gulp-concat",
+    "repo": "https://github.com/wearefractal/gulp-concat.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 22041.47210699995,
+    "npmTestPassed": true,
+    "npmTestTime": 2080.3692159999628
+  },
+  {
+    "name": "passport",
+    "repo": "git://github.com/jaredhanson/passport.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 5704.6896279999055,
+    "npmTestPassed": true,
+    "npmTestTime": 3039.0338749999646
+  },
+  {
+    "name": "nodemailer",
+    "repo": "git://github.com/nodemailer/nodemailer.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 51645.09270100016,
+    "npmTestPassed": true,
+    "npmTestTime": 10684.774028999964
+  },
+  {
+    "name": "colors",
+    "repo": "http://github.com/Marak/colors.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 1234.0522699998692,
+    "npmTestPassed": false,
+    "npmTestTime": 1165.5906710000709
+  },
+  {
+    "name": "bluebird",
+    "repo": "git://github.com/petkaantonov/bluebird.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 69379.97274899995,
+    "npmTestPassed": true,
+    "npmTestTime": 26403.5449310001
+  },
+  {
+    "name": "redis",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "react",
+    "repo": "https://github.com/facebook/react.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 131171.15939099994,
+    "npmTestPassed": true,
+    "npmTestTime": 167592.1344039999
+  },
+  {
+    "name": "gulp-sass",
+    "repo": "git://github.com/dlmanning/gulp-sass.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 45874.87407899974,
+    "npmTestPassed": true,
+    "npmTestTime": 4557.195321999956
+  },
+  {
+    "name": "hapi",
+    "repo": "git://github.com/hapijs/hapi.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 26142.486940000206,
+    "npmTestPassed": true,
+    "npmTestTime": 33430.10568999965
+  },
+  {
+    "name": "karma",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "nodemon",
+    "repo": "https://github.com/remy/nodemon.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 54950.59864700027,
+    "npmTestPassed": true,
+    "npmTestTime": 123352.15699400008
+  },
+  {
+    "name": "coffee-script",
+    "repo": "git://github.com/jashkenas/coffeescript.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 7549.903369999956,
+    "npmTestPassed": true,
+    "npmTestTime": 12362.33049999969
+  },
+  {
+    "name": "mysql",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "yo",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "gulp-autoprefixer",
+    "repo": "https://github.com/sindresorhus/gulp-autoprefixer",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 39400.63622000022,
+    "npmTestPassed": true,
+    "npmTestTime": 5502.9184759999625
+  },
+  {
+    "name": "body-parser",
+    "repo": "https://github.com/expressjs/body-parser.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 24882.03111199988,
+    "npmTestPassed": true,
+    "npmTestTime": 5707.726052999962
+  },
+  {
+    "name": "validator",
+    "repo": "git+ssh://git@github.com/chriso/validator.js.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 27.619063999969512,
+    "npmTestPassed": false,
+    "npmTestTime": 26.72178399981931
+  },
+  {
+    "name": "jade",
+    "repo": "git://github.com/jadejs/jade.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 85368.05403200025,
+    "npmTestPassed": true,
+    "npmTestTime": 14522.192119999789
+  },
+  {
+    "name": "minimist",
+    "repo": "git://github.com/substack/minimist.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 18778.31979899993,
+    "npmTestPassed": true,
+    "npmTestTime": 4309.600331999827
+  },
+  {
+    "name": "cordova",
+    "repo": "https://git-wip-us.apache.org/repos/asf/cordova-cli.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 83957.81370900013,
+    "npmTestPassed": true,
+    "npmTestTime": 7310.579357000068
+  },
+  {
+    "name": "browser-sync",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "mongodb",
+    "repo": "git@github.com:mongodb/node-mongodb-native.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 25.037064000032842,
+    "npmTestPassed": false,
+    "npmTestTime": 23.95018899999559
+  },
+  {
+    "name": "less",
+    "repo": "https://github.com/less/less.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 89647.5087720002,
+    "npmTestPassed": false,
+    "npmTestTime": 1187.9498230000027
+  },
+  {
+    "name": "http-server",
+    "repo": "git://github.com/indexzero/http-server.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 33952.34705500025,
+    "npmTestPassed": true,
+    "npmTestTime": 5502.206102000084
+  },
+  {
+    "name": "grunt-cli",
+    "repo": "https://github.com/gruntjs/grunt-cli.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 15919.007947999984,
+    "npmTestPassed": true,
+    "npmTestTime": 2447.410023999866
+  },
+  {
+    "name": "gulp-imagemin",
+    "repo": "https://github.com/sindresorhus/gulp-imagemin.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 78168.00344899995,
+    "npmTestPassed": true,
+    "npmTestTime": 13840.96150800027
+  },
+  {
+    "name": "winston",
+    "repo": "https://github.com/winstonjs/winston.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 5671.480701999739,
+    "npmTestPassed": true,
+    "npmTestTime": 16239.681007999927
+  },
+  {
+    "name": "npm-check-updates",
+    "repo": "https://github.com/tjunnone/npm-check-updates.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 54536.38659400027,
+    "npmTestPassed": true,
+    "npmTestTime": 41955.92804700043
+  },
+  {
+    "name": "gulp-rename",
+    "repo": "git://github.com/hparra/gulp-rename.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 23902.465566999745,
+    "npmTestPassed": false,
+    "npmTestTime": 2904.4934820001945
+  },
+  {
+    "name": "shelljs",
+    "repo": "git://github.com/shelljs/shelljs.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 7664.094953999855,
+    "npmTestPassed": true,
+    "npmTestTime": 35825.10953899985
+  },
+  {
+    "name": "gulp-sourcemaps",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "glob",
+    "repo": "git://github.com/isaacs/node-glob.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 33480.02616799995,
+    "npmTestPassed": true,
+    "npmTestTime": 77279.38121899962
+  },
+  {
+    "name": "fs-extra",
+    "repo": "https://github.com/jprichardson/node-fs-extra.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 29479.89155000029,
+    "npmTestPassed": true,
+    "npmTestTime": 15071.91285199998
+  },
+  {
+    "name": "morgan",
+    "repo": "https://github.com/expressjs/morgan",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 23480.09842100041,
+    "npmTestPassed": true,
+    "npmTestTime": 3665.864501000382
+  },
+  {
+    "name": "yargs",
+    "repo": "git+ssh://git@github.com/yargs/yargs.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 30.919029000215232,
+    "npmTestPassed": false,
+    "npmTestTime": 24.72676400002092
+  },
+  {
+    "name": "webpack",
+    "skipped": true,
+    "reason": "excluded"
+  },
+  {
+    "name": "chai",
+    "repo": "https://github.com/chaijs/chai.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 64998.06595200021,
+    "npmTestPassed": false,
+    "npmTestTime": 6768.299585000146
+  },
+  {
+    "name": "superagent",
+    "repo": "git://github.com/visionmedia/superagent.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 65772.49301999994,
+    "npmTestPassed": true,
+    "npmTestTime": 9817.524264999665
+  },
+  {
+    "name": "gulp-minify-css",
+    "skipped": true,
+    "reason": "no repo"
+  },
+  {
+    "name": "jshint",
+    "repo": "https://github.com/jshint/jshint.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 300024.9324830002,
+    "npmTestPassed": false,
+    "npmTestTime": 39683.64899099991
+  },
+  {
+    "name": "node-inspector",
+    "repo": "git+ssh://git@github.com/node-inspector/node-inspector.git",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 84.22306900005788,
+    "npmTestPassed": false,
+    "npmTestTime": 52.182883999310434
+  },
+  {
+    "name": "del",
+    "repo": "https://github.com/sindresorhus/del.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 95941.63400899991,
+    "npmTestPassed": true,
+    "npmTestTime": 16772.63532099966
+  },
+  {
+    "name": "uglify-js",
+    "repo": "https://github.com/mishoo/UglifyJS2.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 57730.892798999324,
+    "npmTestPassed": false,
+    "npmTestTime": 60265.58497500047
+  },
+  {
+    "name": "bcrypt",
+    "repo": "https://github.com/ncb000gt/node.bcrypt.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 15206.430203000084,
+    "npmTestPassed": false,
+    "npmTestTime": 4900.855835000053
+  },
+  {
+    "name": "mkdirp",
+    "repo": "https://github.com/substack/node-mkdirp.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 64760.87641600054,
+    "npmTestPassed": true,
+    "npmTestTime": 18213.3631450003
+  },
+  {
+    "name": "connect",
+    "repo": "https://github.com/senchalabs/connect.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 26093.08640800044,
+    "npmTestPassed": true,
+    "npmTestTime": 4136.959308000281
+  },
+  {
+    "name": "gulp-load-plugins",
+    "repo": "https://github.com/jackfranklin/gulp-load-plugins.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 47235.66820800025,
+    "npmTestPassed": true,
+    "npmTestTime": 8991.802536000498
+  },
+  {
+    "name": "inquirer",
+    "repo": "https://github.com/sboudrias/Inquirer.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 136274.90378199983,
+    "npmTestPassed": true,
+    "npmTestTime": 36607.627643000335
+  },
+  {
+    "name": "jquery",
+    "repo": "https://github.com/jquery/jquery.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 123026.55712599959,
+    "npmTestPassed": true,
+    "npmTestTime": 127637.17754800059
+  },
+  {
+    "name": "express-session",
+    "repo": "https://github.com/expressjs/session",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 30368.914524000138,
+    "npmTestPassed": true,
+    "npmTestTime": 8804.025209000334
+  },
+  {
+    "name": "koa",
+    "repo": "https://github.com/koajs/koa.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 65839.47882100008,
+    "npmTestPassed": true,
+    "npmTestTime": 10943.028655000031
+  },
+  {
+    "name": "angular",
+    "repo": "https://github.com/angular/angular.js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 300030.60184899997,
+    "npmTestPassed": true,
+    "npmTestTime": 3390.6620209999382
+  },
+  {
+    "name": "xml2js",
+    "repo": "https://github.com/Leonidas-from-XIV/node-xml2js.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 56655.564778000116,
+    "npmTestPassed": true,
+    "npmTestTime": 166646.13090999983
+  },
+  {
+    "name": "sails",
+    "repo": "git://github.com/balderdashy/sails.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 197264.74421200063,
+    "npmTestPassed": false,
+    "npmTestTime": 32264.345836999826
+  },
+  {
+    "name": "grunt-contrib-watch",
+    "repo": "https://github.com/gruntjs/grunt-contrib-watch",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 70684.44303099997,
+    "npmTestPassed": false,
+    "npmTestTime": 258154.3321150001
+  },
+  {
+    "name": "node-uuid",
+    "repo": "https://github.com/broofa/node-uuid.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 22793.182037999853,
+    "npmTestPassed": true,
+    "npmTestTime": 4841.51408499945
+  },
+  {
+    "name": "sequelize",
+    "repo": "https://github.com/sequelize/sequelize.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 115742.18799900077,
+    "npmTestPassed": false,
+    "npmTestTime": 86396.91905600019
+  },
+  {
+    "name": "gulp-jshint",
+    "repo": "git://github.com/spalger/gulp-jshint.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 34831.364927999675,
+    "npmTestPassed": false,
+    "npmTestTime": 3269.4334829999134
+  },
+  {
+    "name": "gulp-util",
+    "repo": "https://github.com/gulpjs/gulp-util.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 51528.80321099982,
+    "npmTestPassed": true,
+    "npmTestTime": 6214.254274999723
+  },
+  {
+    "name": "sinopia",
+    "repo": "git://github.com/rlidwka/sinopia",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 5887.6242160005495,
+    "npmTestPassed": true,
+    "npmTestTime": 6289.571604999714
+  },
+  {
+    "name": "restify",
+    "repo": "git://github.com/restify/node-restify.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 93605.40642100014,
+    "npmTestPassed": true,
+    "npmTestTime": 34692.34551199991
+  },
+  {
+    "name": "statsd",
+    "repo": "https://github.com/etsy/statsd.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 15984.570460000075,
+    "npmTestPassed": true,
+    "npmTestTime": 30616.75791900046
+  },
+  {
+    "name": "gm",
+    "repo": "https://github.com/aheckmann/gm.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 4828.562317000702,
+    "npmTestPassed": false,
+    "npmTestTime": 3400.0934500005096
+  },
+  {
+    "name": "marked",
+    "repo": "git://github.com/chjj/marked.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 34450.691578000784,
+    "npmTestPassed": true,
+    "npmTestTime": 2668.015116000548
+  },
+  {
+    "name": "formidable",
+    "repo": "git://github.com/felixge/node-formidable.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 7905.170590000227,
+    "npmTestPassed": false,
+    "npmTestTime": 10616.622371999547
+  },
+  {
+    "name": "gulp-plumber",
+    "repo": "git://github.com/floatdrop/gulp-plumber.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 107590.02570400015,
+    "npmTestPassed": true,
+    "npmTestTime": 9707.816248999909
+  },
+  {
+    "name": "gulp-inject",
+    "repo": "git://github.com/klei/gulp-inject.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 90066.35168399941,
+    "npmTestPassed": true,
+    "npmTestTime": 17235.334337000735
+  },
+  {
+    "name": "babel",
+    "repo": "https://github.com/babel/babel/tree/master/packages/babel",
+    "gitClonePassed": false,
+    "npmInstallPassed": false,
+    "npmInstallTime": 43.5020300000906,
+    "npmTestPassed": false,
+    "npmTestTime": 77.18399500008672
+  },
+  {
+    "name": "rimraf",
+    "repo": "git://github.com/isaacs/rimraf.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 58046.04734000005,
+    "npmTestPassed": true,
+    "npmTestTime": 7766.232785000466
+  },
+  {
+    "name": "ejs",
+    "repo": "git://github.com/mde/ejs.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 72853.54678100068,
+    "npmTestPassed": true,
+    "npmTestTime": 4055.236278999597
+  },
+  {
+    "name": "istanbul",
+    "repo": "git://github.com/gotwarlost/istanbul.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 38815.49583899975,
+    "npmTestPassed": false,
+    "npmTestTime": 300021.775626
+  },
+  {
+    "name": "ws",
+    "repo": "git://github.com/websockets/ws.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": false,
+    "npmInstallTime": 48370.19491500035,
+    "npmTestPassed": true,
+    "npmTestTime": 31147.114649999887
+  },
+  {
+    "name": "grunt-contrib-uglify",
+    "repo": "https://github.com/gruntjs/grunt-contrib-uglify.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 47453.818241999485,
+    "npmTestPassed": false,
+    "npmTestTime": 9083.017922000028
+  },
+  {
+    "name": "gulp-livereload",
+    "repo": "git://github.com/vohof/gulp-livereload.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 29687.55196700059,
+    "npmTestPassed": true,
+    "npmTestTime": 4086.564708000049
+  },
+  {
+    "name": "run-sequence",
+    "repo": "git://github.com/OverZealous/run-sequence.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 30047.289284000173,
+    "npmTestPassed": true,
+    "npmTestTime": 3959.0909439995885
+  },
+  {
+    "name": "gulp-watch",
+    "repo": "git://github.com/floatdrop/gulp-watch.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 102656.54632299952,
+    "npmTestPassed": true,
+    "npmTestTime": 10307.281609000638
+  },
+  {
+    "name": "dotenv",
+    "repo": "git://github.com/motdotla/dotenv.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 119103.34469099995,
+    "npmTestPassed": false,
+    "npmTestTime": 5327.680980999954
+  },
+  {
+    "name": "supertest",
+    "repo": "https://github.com/visionmedia/supertest.git",
+    "gitClonePassed": true,
+    "npmInstallPassed": true,
+    "npmInstallTime": 45897.23084499966,
+    "npmTestPassed": true,
+    "npmTestTime": 18034.160422999412
+  }
+]
