@@ -82,12 +82,14 @@ rimraf('./workspace').then(() => {
       if (IGNORE.indexOf(pkg) !== -1) {
         console.error(`skipping package ${pkg} because it takes too long or is faily`)
         pkgResult.skipped = true
+        pkgResult.reason = 'excluded'
         return
       }
       return fetch(`http://registry.npmjs.org/${pkg}`).then(resp => resp.json()).then(json => {
         if (!json.repository) {
           console.error(`skipping package ${pkg} because no repository`)
           pkgResult.skipped = true
+          pkgResult.reason = 'no repo'
           return
         }
         var repo = (json.repository.url || json.repository).replace('git+https', 'https')
