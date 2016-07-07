@@ -5,7 +5,6 @@ var mkdirp = denodeify(require('mkdirp'))
 var fetch = require('node-fetch')
 var packages = require('./topPackages')
 var path = require('path')
-var url = require('url')
 var present = require('present')
 var writeFile = denodeify(require('fs').writeFile)
 
@@ -78,31 +77,31 @@ rimraf('./workspace').then(() => {
   var chain = Promise.resolve()
   packages.forEach(pkg => {
     chain = chain.then(() => {
+      var pkgResult = {name: pkg}
+      testResults.push(pkgResult)
       if (IGNORE.indexOf(pkg) !== -1) {
         console.error(`skipping package ${pkg} because it takes too long or is faily`)
-        testResults.push({name: pkg, skipped: true})
+        pkgResult.skipped = true
         return
       }
       return fetch(`http://registry.npmjs.org/${pkg}`).then(resp => resp.json()).then(json => {
         if (!json.repository) {
           console.error(`skipping package ${pkg} because no repository`)
-          testResults.push({name: pkg, skipped: true})
+          pkgResult.skipped = true
           return
         }
-        var repo = json.repository.url || json.repository
-        repo = repo.replace('git+https', 'https')
+        var repo = (json.repository.url || json.repository).replace('git+https', 'https')
+        pkgResult.repo = repo
+        var dir = path.join('workspace', pkg)
         var gitPromise = spawnCommand(
           'git',
-          ['clone', '--depth', '1', '--single-branch', '--branch', 'master', repo],
+          [ 'clone', '--depth', '1', '--single-branch', '--branch', 'master', repo, pkg ],
           {
             cwd: 'workspace',
             env: process.env
           })
-        return gitPromise.then(() => {
-          var paths = url.parse(repo).path.split('/')
-          var dir = paths[paths.length - 1].replace(/.git$/, '')
-          dir = path.join('workspace', dir)
-          var pkgResult = {name: pkg, repo: repo}
+        return gitPromise.then(res => {
+          pkgResult.gitClonePassed = res.passed
           return spawnCommand('npm', ['install'], {
             cwd: dir,
             env: process.env
@@ -110,13 +109,12 @@ rimraf('./workspace').then(() => {
             pkgResult.npmInstallPassed = res.passed
             pkgResult.npmInstallTime = res.time
             return spawnCommand('npm', ['test'], {
-              cwd: path.join('workspace', dir),
+              cwd: dir,
               env: process.env
             })
           }).then(res => {
             pkgResult.npmTestPassed = res.passed
             pkgResult.npmTestTime = res.time
-            testResults.push(pkgResult)
             console.log(JSON.stringify(testResults, null, '  '))
           }).then(() => {
             return rimraf(dir)
