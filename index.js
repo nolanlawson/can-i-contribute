@@ -140,7 +140,7 @@ Promise.all([
             pkgResult.npmTestTime = res.time
             logger.info(JSON.stringify(testResults, null, '  '))
           }).then(() => {
-            return rimraf(dir)
+            return rimraf(dir).catch(err => logger.error(err))
           })
         })
       })
