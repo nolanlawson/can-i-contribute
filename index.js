@@ -19,7 +19,8 @@ var IGNORE = [
   'karma',           // slow
   'redis',           // requires redis?
   'mysql',           // requires mysql?
-  'forever'          // ties up resources and doesn't delete them
+  'forever',         // ties up resources and doesn't delete them
+  'mongoose'         // requires mongo
 ]
 
 function spawnAndRedirectConsole (cmd, args, opts) {
