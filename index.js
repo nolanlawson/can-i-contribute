@@ -7,6 +7,7 @@ var packages = require('./topPackages')
 var path = require('path')
 var present = require('present')
 var writeFile = denodeify(require('fs').writeFile)
+var winston = require('winston')
 
 var TIMEOUT = 300000 // timeout and fail after this many milliseconds
 
@@ -22,6 +23,13 @@ var IGNORE = [
   'forever',         // ties up resources and doesn't delete them
   'mongoose'         // requires mongo
 ]
+
+var logger = new (winston.Logger)({
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({filename: 'results.txt'})
+  ]
+})
 
 function spawnAndRedirectConsole (cmd, args, opts) {
   return new Promise((resolve, reject) => {
@@ -41,12 +49,12 @@ function spawnAndRedirectConsole (cmd, args, opts) {
     })
 
     child.on('error', err => {
-      console.error(err)
-      console.error(err.stack)
+      logger.error(err)
+      logger.error(err.stack)
     })
 
-    child.stdout.on('data', data => console.log(data.toString('utf-8').replace(/\n$/, '')))
-    child.stderr.on('data', data => console.error(data.toString('utf-8').replace(/\n$/, '')))
+    child.stdout.on('data', data => logger.info(data.toString('utf-8').replace(/\n$/, '')))
+    child.stderr.on('data', data => logger.error(data.toString('utf-8').replace(/\n$/, '')))
 
     setTimeout(() => {
       if (done) {
@@ -60,35 +68,47 @@ function spawnAndRedirectConsole (cmd, args, opts) {
 }
 
 function spawnCommand (cmd, args, opts) {
-  console.log(cmd, args, {cwd: opts.cwd})
+  logger.info(cmd, args, {cwd: opts.cwd})
   var start = present()
   return spawnAndRedirectConsole(cmd, args, opts).then(() => {
     return {passed: true, time: present() - start}
   }).catch(err => {
-    console.error(err)
+    logger.error(err)
     return {passed: false, time: present() - start}
   })
 }
 
 var testResults = []
 
-rimraf('./workspace').then(() => {
+Promise.all([
+  rimraf('./workspace'),
+  rimraf('./results.json'),
+  rimraf('./results.txt')
+]).then(() => {
   return mkdirp('./workspace')
+}).then(() => {
+  return spawnCommand('node', ['-v'], {})
+}).then(() => {
+  return spawnCommand('npm', ['-v'], {})
+}).then(() => {
+  return spawnCommand('git', ['--version'], {})
+}).then(() => {
+  return spawnCommand('python', ['--version'], {})
 }).then(() => {
   var chain = Promise.resolve()
   packages.forEach(pkg => {
     chain = chain.then(() => {
-      var pkgResult = {name: pkg}
+      var pkgResult = { name: pkg }
       testResults.push(pkgResult)
       if (IGNORE.indexOf(pkg) !== -1) {
-        console.error(`skipping package ${pkg} because it takes too long or is faily`)
+        logger.error(`skipping package ${pkg} because it takes too long or is faily`)
         pkgResult.skipped = true
         pkgResult.reason = 'excluded'
         return
       }
       return fetch(`http://registry.npmjs.org/${pkg}`).then(resp => resp.json()).then(json => {
         if (!json.repository) {
-          console.error(`skipping package ${pkg} because no repository`)
+          logger.error(`skipping package ${pkg} because no repository`)
           pkgResult.skipped = true
           pkgResult.reason = 'no repo'
           return
@@ -105,20 +125,20 @@ rimraf('./workspace').then(() => {
           })
         return gitPromise.then(res => {
           pkgResult.gitClonePassed = res.passed
-          return spawnCommand('npm', ['install'], {
+          return spawnCommand('npm', [ 'install' ], {
             cwd: dir,
             env: process.env
           }).then(res => {
             pkgResult.npmInstallPassed = res.passed
             pkgResult.npmInstallTime = res.time
-            return spawnCommand('npm', ['test'], {
+            return spawnCommand('npm', [ 'test' ], {
               cwd: dir,
               env: process.env
             })
           }).then(res => {
             pkgResult.npmTestPassed = res.passed
             pkgResult.npmTestTime = res.time
-            console.log(JSON.stringify(testResults, null, '  '))
+            logger.info(JSON.stringify(testResults, null, '  '))
           }).then(() => {
             return rimraf(dir)
           })
@@ -129,8 +149,11 @@ rimraf('./workspace').then(() => {
   return chain.then(() => {
     return writeFile('results.json', JSON.stringify(testResults, null, '  '), 'utf-8')
   })
+}).then(() => {
+  logger.info('Done!')
+  process.exit(0)
 }).catch(err => {
-  console.error(err)
-  console.error(err.stack)
+  logger.error(err)
+  logger.error(err.stack)
   process.exit(1)
 })
