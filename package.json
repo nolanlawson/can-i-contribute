@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "standard"
+    "test": "standard",
+    "fetch-most-starred-packages": "node bin/fetch-most-starred-packages.js"
   },
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
@@ -21,6 +22,8 @@
   },
   "private": true,
   "devDependencies": {
+    "cheerio": "^0.20.0",
+    "node-fetch": "^1.5.3",
     "standard": "^7.1.2"
   }
 }
